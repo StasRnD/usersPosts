@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query'
 import { config } from '../../config'
 import { useParams } from 'react-router'
-import { Post, Comment } from '../../types'
+import { Post } from '../../types'
 
 export function usePostDetailsProps() {
   const { postId } = useParams()

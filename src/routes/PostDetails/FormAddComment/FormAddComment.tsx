@@ -2,8 +2,6 @@ import { Box, Button, Flex, FormLabel, Input, Textarea } from '@chakra-ui/react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useAddCommentProps } from './hooks'
-import { useState } from 'react'
-import { Comment } from '../../../types'
 
 const validationObj = Yup.object({
   email: Yup.string()
@@ -21,14 +19,13 @@ type CommentsProps = {
   onAddComment: () => void
 }
 
-export const FormAddComment = ({ onAddComment }: CommentsProps) => {
-  const [newComment, setNewComment] = useState({
-    email: '543',
-    name: '3245',
-    text: '543'
-  })
-  useAddCommentProps(newComment)
+type addComment = {
+  name: string
+  text: string
+  email: string
+}
 
+export const FormAddComment = ({ onAddComment }: CommentsProps) => {
   const formik = useFormik({
     initialValues: {
       name: '',

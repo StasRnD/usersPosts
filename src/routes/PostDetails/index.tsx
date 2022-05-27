@@ -1,6 +1,6 @@
 import { usePostDetailsProps } from './hooks'
-import { Flex, Button, Box, Heading, Text } from '@chakra-ui/react'
-import { FormAddComment } from './FormAddComment/FormAddComment'
+import { Flex, Heading, Text } from '@chakra-ui/react'
+
 import { Comments } from './Comments/Comments'
 
 export function PostDetailsWrap() {

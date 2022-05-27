@@ -9,7 +9,7 @@ export function useUsersPostsProps() {
   const { isLoading, error, data } = useQuery<Post[]>('posts', () => {
     return fetch(config.apiUrl + `/posts`).then((responsive) => responsive.json())
   })
-  console.log(data)
+
   return {
     isLoading,
     error,

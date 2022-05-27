@@ -22,7 +22,7 @@ export function useUserPostsPreviewProps() {
   const { isLoading, error, data } = useQuery<Post[]>('postsPreview', () => {
     return fetch(config.apiUrl + `/posts`).then((responsive) => responsive.json())
   })
-  console.log(data)
+
   return {
     isLoading,
     error,
