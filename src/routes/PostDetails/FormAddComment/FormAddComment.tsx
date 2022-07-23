@@ -19,13 +19,8 @@ type CommentsProps = {
   onAddComment: () => void
 }
 
-type addComment = {
-  name: string
-  text: string
-  email: string
-}
-
 export const FormAddComment = ({ onAddComment }: CommentsProps) => {
+  const mutation = useAddCommentProps()
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -33,7 +28,7 @@ export const FormAddComment = ({ onAddComment }: CommentsProps) => {
       email: ''
     },
     onSubmit: (values) => {
-      console.log(values)
+      mutation.mutate(values)
       onAddComment()
     },
 
